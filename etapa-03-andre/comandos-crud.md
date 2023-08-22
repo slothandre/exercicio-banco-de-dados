@@ -116,5 +116,49 @@ ORDER BY COUNT(alunos.id) DESC;
 ### 10) Faça uma consulta que mostre o nome dos alunos, suas notas, médias, e o título dos cursos que fazem. Devem ser considerados somente os alunos de Front-End e Back-End. Mostre os resultados classificados pelo nome do aluno.
 
 ```sql
-
+SELECT
+	alunos.nome AS "Nome do aluno",
+    alunos.nota_1 AS "Primeira nota",
+    alunos.nota_2 AS "Segunda nota",
+    CAST(((alunos.nota_1 + alunos.nota_2) / 2) AS DEC(6, 2)) AS "Média",
+    cursos.titulo AS "Nome do curso"
+FROM alunos INNER JOIN cursos
+ON alunos.cursos_id = cursos.id
+WHERE cursos.id = 1 OR cursos.id = 2
+ORDER BY alunos.nome;
 ```
+
+![Print do resultado da consulta](resultado-10.png)
+
+### 11) Faça uma consulta que altere o nome do curso de Figma para Adobe XD e sua carga horária de 10 para 15.
+
+```sql
+UPDATE cursos SET
+	titulo = "Adobe XD",
+    carga_horaria = 15
+WHERE id = 4;
+```
+
+![Print do resultado da consulta](resultado-11.png)
+
+### 12) Faça uma consulta que exclua um aluno do curso de Redes de Computadores e um aluno do curso de UX/UI.
+
+```sql
+DELETE FROM alunos WHERE cursos_id = 5 LIMIT 1;
+DELETE FROM alunos WHERE cursos_id = 3 LIMIT 1;
+```
+
+![Print do resultado da consulta](resultado-12.png)
+
+### 13) Faça uma consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
+
+```sql
+SELECT
+	alunos.nome AS "Nome do aluno",
+    cursos.titulo AS "Nome do curso"
+FROM alunos INNER JOIN cursos
+ON alunos.cursos_id = cursos.id
+ORDER BY alunos.nome;
+```
+
+![Print do resultado da consulta](resultado-13.png)
