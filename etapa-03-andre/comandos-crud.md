@@ -177,3 +177,29 @@ FROM alunos;
 
 ![Print do resultado da consulta](resultado-desafio-01.png)
 
+### 2) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média maior ou igual a 7.
+
+```sql
+SELECT
+	nome AS "Nome do aluno",
+    nota_1 AS "Primeira nota",
+    nota_2 AS "Segunda nota",
+    CAST(((nota_1 + nota_2) / 2) AS DEC(6, 2)) AS Media
+FROM alunos
+WHERE CAST(((nota_1 + nota_2) / 2) AS DEC(6, 2)) >= 7.00;
+```
+![Print do resultado da consulta](resultado-desafio-02.png)
+
+### 3) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média menor que 7.
+
+```sql
+SELECT
+	nome AS "Nome do aluno",
+    nota_1 AS "Primeira nota",
+    nota_2 AS "Segunda nota",
+    CAST(((nota_1 + nota_2) / 2) AS DEC(6, 2)) AS Media
+FROM alunos
+WHERE CAST(((nota_1 + nota_2) / 2) AS DEC(6, 2)) <= 7.00;
+```
+
+![Print do resultado da consulta](resultado-desafio-03.png)
