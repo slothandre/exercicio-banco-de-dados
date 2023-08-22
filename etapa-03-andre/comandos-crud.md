@@ -162,3 +162,18 @@ ORDER BY alunos.nome;
 ```
 
 ![Print do resultado da consulta](resultado-13.png)
+
+## DESAFIOS
+
+### 1) Criar uma consulta que calcule a idade do aluno.
+
+```sql
+SELECT
+	nome AS "Nome do aluno",
+    data_nascimento AS "Data de nascimento",
+    CAST((DATEDIFF(CURDATE(), data_nascimento) / 365) AS INT) AS "Idade"
+FROM alunos;
+```
+
+![Print do resultado da consulta](resultado-desafio-01.png)
+
