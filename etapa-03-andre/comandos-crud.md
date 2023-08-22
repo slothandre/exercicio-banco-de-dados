@@ -203,3 +203,14 @@ WHERE CAST(((nota_1 + nota_2) / 2) AS DEC(6, 2)) <= 7.00;
 ```
 
 ![Print do resultado da consulta](resultado-desafio-03.png)
+
+### 4) Criar uma consulta que mostre a quantidade de alunos com média maior ou igual a 7.
+
+```sql
+SELECT
+    COUNT((nota_1 + nota_2) / 2) AS "Qtd de alunos acima da média (7)"
+FROM alunos
+WHERE ((nota_1 + nota_2) / 2) >= 7;
+```
+
+![Print do resultado da consulta](resultado-desafio-04.png)
