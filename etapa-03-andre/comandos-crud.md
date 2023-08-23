@@ -42,7 +42,7 @@ SELECT
 	nome AS "Professor",
     area_atuacao AS "Area de atuação"
 FROM professores
-WHERE area_atuacao = 2;
+WHERE area_atuacao LIKE "%desenvolvimento%";
 ```
 
 ![Print do resultado da consulta](resultado-04.png)
